@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Users = require('./User');
 const jwt = require('jsonwebtoken');
+const axios = require('axios');
 
 // Rota para criar um novo usuario
 router.post("/criar", async (req, res) => {
@@ -96,8 +97,24 @@ function tokenUser(req, res, next) {
       res.status(500).json({ erro: 'Erro interno do servidor' });
     }
   }
+
+  // Rota para obter a lista completa de todos os Temtems
+router.get('/temtems',tokenUser, async (req, res) => {
+  try {
+    // Faz a requisição para a API pública do Temtem
+    const response = await axios.get('https://temtem-api.mael.tech/api/temtems');
+
+    // Extrai a lista de Temtems da resposta
+    const temtems = response.data;
+
+    // Retorna a lista de Temtems como resposta
+    res.status(200).json(temtems);
+  } catch (error) {
+    console.error('Erro ao buscar Temtems:', error);
+    res.status(500).json({ erro: 'Erro interno do servidor ao buscar Temtems' });
+  }
+});
   
-  module.exports = tokenUser;
   
 
   module.exports = router;
