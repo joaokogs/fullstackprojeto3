@@ -6,6 +6,7 @@ const cors = require('cors');
 //Database
 const connection = require('./database/database');
 const User = require('./users/User');
+const Temtem = require('./temtems/Temtems');
 
 app.use(cors());
 
