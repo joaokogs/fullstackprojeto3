@@ -1,0 +1,62 @@
+/* Estilos globais */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f8f9fa;
+  }
+  
+  /* Estilos específicos da Navbar */
+  .navbar {
+    margin-bottom: 20px;
+  }
+  
+  .navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+  
+  .navbar-nav .nav-link {
+    color: #ffffff;
+    font-size: 1rem;
+    margin-right: 15px;
+  }
+  
+  .navbar-nav .nav-link:hover {
+    color: #d3d3d3;
+  }
+  
+  /* Estilo do botão de logout */
+  .btn-outline-light {
+    color: #ffffff;
+    border-color: #ffffff;
+  }
+  
+  .btn-outline-light:hover {
+    color: #000;
+    background-color: #ffffff;
+    border-color: #ffffff;
+  }
+  
+  /* Estilos para formulários e botões */
+  .form-control {
+    margin-bottom: 15px;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+  }
+  
+  /* Responsividade */
+  @media (max-width: 767px) {
+    .navbar-nav .nav-link {
+      font-size: 0.9rem;
+    }
+  }
+  
